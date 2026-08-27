@@ -33,3 +33,11 @@ export default function Page() {
     </main>
   );
 }
+
+// Sally stamp suggestions (W) — host must wire real run() bodies
+registerAction({
+  id: "next-js-learn-course-2",
+  label: "Next.js Learn Course",
+  risk: "low",
+  run: () => { router.push("/login"); },
+});

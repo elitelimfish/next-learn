@@ -27,10 +27,20 @@ export function UpdateInvoice({ id }: { id: string }) {
 export function DeleteInvoice({ id }: { id: string }) {
   return (
     <>
-      <button type="submit" className="rounded-md border p-2 hover:bg-gray-100">
+      <SallyTarget id="delete" label="Delete">
+  <button type="submit" className="rounded-md border p-2 hover:bg-gray-100">
         <span className="sr-only">Delete</span>
         <TrashIcon className="w-5" />
       </button>
+</SallyTarget>
     </>
   );
 }
+
+// Sally stamp suggestions (W) — host must wire real run() bodies
+registerAction({
+  id: "delete-2",
+  label: "Delete",
+  risk: "low",
+  run: () => {},
+});

@@ -23,7 +23,8 @@ export default function LoginForm() {
               Email
             </label>
             <div className="relative">
-              <input
+              <SallyTarget id="email" label="email" completeWhen="emailFilled">
+  <input
                 className="peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500"
                 id="email"
                 type="email"
@@ -31,6 +32,7 @@ export default function LoginForm() {
                 placeholder="Enter your email address"
                 required
               />
+</SallyTarget>
               <AtSymbolIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
           </div>
@@ -55,9 +57,11 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <Button className="mt-4 w-full">
+        <SallyTarget id="log-in" label="Log in">
+  <Button className="mt-4 w-full">
           Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
         </Button>
+</SallyTarget>
         <div className="flex h-8 items-end space-x-1">
           {/* Add form errors here */}
         </div>
@@ -65,3 +69,11 @@ export default function LoginForm() {
     </form>
   );
 }
+
+// Sally stamp suggestions (W) — host must wire real run() bodies
+registerAction({
+  id: "log-in-2",
+  label: "Log in",
+  risk: "low",
+  run: () => {},
+});
