@@ -12,9 +12,11 @@ export default function Page() {
         <div className="flex flex-col justify-center gap-6 rounded-lg bg-gray-50 px-6 py-10 md:w-2/5 md:px-20">
           <p className={`text-xl text-gray-800 md:text-3xl md:leading-normal`}>
             <strong>Welcome to Acme.</strong> This is the example for the{' '}
-            <a href="https://nextjs.org/learn/" className="text-blue-500">
+            <SallyTarget id="next-js-learn-course" label="Next.js Learn Course">
+  <a href="https://nextjs.org/learn/" className="text-blue-500">
               Next.js Learn Course
             </a>
+</SallyTarget>
             , brought to you by Vercel.
           </p>
           <Link
@@ -31,3 +33,11 @@ export default function Page() {
     </main>
   );
 }
+
+// Sally stamp suggestions (W) — host must wire real run() bodies
+registerAction({
+  id: "next-js-learn-course-2",
+  label: "Next.js Learn Course",
+  risk: "low",
+  run: () => { router.push("/login"); },
+});

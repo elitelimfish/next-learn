@@ -105,8 +105,18 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         >
           Cancel
         </Link>
-        <Button type="submit">Create Invoice</Button>
+        <SallyTarget id="create-invoice" label="Create Invoice">
+  <Button type="submit">Create Invoice</Button>
+</SallyTarget>
       </div>
     </form>
   );
 }
+
+// Sally stamp suggestions (W) — host must wire real run() bodies
+registerAction({
+  id: "create-invoice-2",
+  label: "Create Invoice",
+  risk: "low",
+  run: () => {},
+});

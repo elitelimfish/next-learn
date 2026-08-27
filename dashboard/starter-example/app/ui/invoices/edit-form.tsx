@@ -116,8 +116,18 @@ export default function EditInvoiceForm({
         >
           Cancel
         </Link>
-        <Button type="submit">Edit Invoice</Button>
+        <SallyTarget id="edit-invoice" label="Edit Invoice">
+  <Button type="submit">Edit Invoice</Button>
+</SallyTarget>
       </div>
     </form>
   );
 }
+
+// Sally stamp suggestions (W) — host must wire real run() bodies
+registerAction({
+  id: "edit-invoice-2",
+  label: "Edit Invoice",
+  risk: "low",
+  run: () => {},
+});
